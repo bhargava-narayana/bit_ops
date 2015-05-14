@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int bit_count(int input)
 {
@@ -14,6 +15,12 @@ int bit_count(int input)
 
 
 }
+
+bool is_Nth_bit_set(int input, int position)
+{
+        return(input & (1 <<(position-1)) ? true : false );
+}
+
 int main(int argc, char *argv[])
 {
         int value;
@@ -31,4 +38,6 @@ int main(int argc, char *argv[])
                 int result = bit_count(value);
                 printf("num of set bits= %d\n",result);
         }
+
+        printf("is_Nth_bit_set for bit 3= %d\n", is_Nth_bit_set(value, 3));
 }
